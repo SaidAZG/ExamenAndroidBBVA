@@ -27,7 +27,6 @@ fun MainActivityNavigation(navController : NavHostController) {
     ) {
         composable(SPLASH_SCREEN) {
             SplashScreen(
-                isLoggedIn = true,
                 goToLogin = {
                     navController.navigate(LOGIN_SCREEN) {
                         popUpTo(SPLASH_SCREEN) { inclusive = true }

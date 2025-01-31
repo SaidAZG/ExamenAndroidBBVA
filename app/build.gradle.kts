@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id ("kotlin-kapt") //Kapt
+    alias(libs.plugins.google.dagger.hilt)
 }
 
 android {
@@ -43,6 +45,14 @@ dependencies {
 
     // Navigation for Jetpack Compose
     implementation(libs.androidx.navigation.compose)
+
+    // Preference Manager
+    implementation(libs.androidx.preference.ktx)
+
+    // DI
+    implementation(libs.androidx.hilt.navigation)
+    implementation (libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

@@ -5,21 +5,26 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import kotlinx.coroutines.delay
 
 const val SPLASH_SCREEN = "splash_screen"
 
 @Composable
 fun SplashScreen(
-    isLoggedIn: Boolean,
     goToLogin: () -> Unit,
     goToDashboard: () -> Unit
 ) {
+    val viewModel : SplashViewModel = hiltViewModel()
+    val isLoggedIn = viewModel.isLoggedIn.collectAsState()
+
     LaunchedEffect(Unit) {
+        viewModel.checkSession()
         delay(2000)
-        if (isLoggedIn) {
+        if (isLoggedIn.value) {
             goToDashboard()
         } else {
             goToLogin()
