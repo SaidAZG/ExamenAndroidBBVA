@@ -19,3 +19,4 @@ val GreyBlue = Color(0xFFC5C9D3)
 val BrigthPink = Color(0xFFEE3A6A)
 
 val White = Color(0xFFFFFFFF)
+val Transparent = Color(0x00FFFFFF)
