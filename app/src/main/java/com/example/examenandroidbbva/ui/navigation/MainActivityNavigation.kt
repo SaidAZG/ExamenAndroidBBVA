@@ -17,7 +17,7 @@ import com.example.examenandroidbbva.ui.screens.splash.SPLASH_SCREEN
 import com.example.examenandroidbbva.ui.screens.splash.SplashScreen
 
 @Composable
-fun MainActivityNavigation(navController : NavHostController) {
+fun MainActivityNavigation(navController: NavHostController) {
     NavHost(
         modifier = Modifier.padding(
             WindowInsets.statusBars.asPaddingValues()
@@ -39,7 +39,13 @@ fun MainActivityNavigation(navController : NavHostController) {
                 }
             )
         }
-        composable(LOGIN_SCREEN) { LoginScreen() }
+        composable(LOGIN_SCREEN) {
+            LoginScreen(
+                goToDasboard = {
+                    navController.navigate(DASHBOARD_SCREEN)
+                }
+            )
+        }
         composable(DASHBOARD_SCREEN) { DashboardScreen() }
     }
 }

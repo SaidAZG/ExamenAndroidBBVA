@@ -1,17 +1,30 @@
 package com.example.examenandroidbbva.di
 
 import com.example.examenandroidbbva.data.local.repository.SessionRepositoryImpl
+import com.example.examenandroidbbva.data.remote.repository.LoginRepositoryImpl
+import com.example.examenandroidbbva.domain.repository.LoginRespository
 import com.example.examenandroidbbva.domain.repository.SessionRepository
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class RepositoryModule {
+class RepositoryModule {
 
-    @Binds
-    abstract fun bindSessionRepository(impl: SessionRepositoryImpl): SessionRepository
+    @Singleton
+    @Provides
+    fun bindSessionRepository(impl: SessionRepositoryImpl): SessionRepository{
+        return impl
+    }
+
+    @Singleton
+    @Provides
+    fun bindLoginRepository(impl: LoginRepositoryImpl): LoginRespository{
+        return impl
+    }
 
 }

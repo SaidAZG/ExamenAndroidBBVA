@@ -49,6 +49,12 @@ dependencies {
     // Preference Manager
     implementation(libs.androidx.preference.ktx)
 
+    //Retrofit
+
+    implementation (libs.retrofit.v210)
+    implementation (libs.gson)
+    implementation(libs.converter.gson)
+
     // DI
     implementation(libs.androidx.hilt.navigation)
     implementation (libs.hilt.android)

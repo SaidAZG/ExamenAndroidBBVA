@@ -24,7 +24,7 @@ fun BasicButton(
             containerColor = Blue,
             disabledContainerColor = GreyBlue
         ),
-        onClick = { /*TODO*/ },
+        onClick = { onClick() },
         enabled = enabled
     ){
         Text(

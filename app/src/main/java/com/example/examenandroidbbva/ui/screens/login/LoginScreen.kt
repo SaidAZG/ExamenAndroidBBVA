@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -25,6 +26,12 @@ fun LoginScreen(
     val viewModel : LoginViewModel = hiltViewModel()
     val state by viewModel.state.collectAsState()
 
+    LaunchedEffect(state.user){
+        if (state.user != null){
+            goToDasboard()
+        }
+    }
+
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -43,7 +50,7 @@ fun LoginScreen(
         )
         BasicButton(
             onClick = {
-                //viewModel.login()
+                viewModel.login()
             },
             text = "Iniciar Sesión",
             enabled = state.isLoginEnabled
@@ -56,9 +63,5 @@ fun LoginScreen(
         state.errorMessage?.let {
             Text(it, color = Color.Red)
         }
-
-        /*if (state.user != null) {
-            goToDasboard()
-        }*/
     }
 }
