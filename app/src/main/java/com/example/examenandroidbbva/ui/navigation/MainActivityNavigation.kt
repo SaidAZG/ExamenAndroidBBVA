@@ -42,10 +42,18 @@ fun MainActivityNavigation(navController: NavHostController) {
         composable(LOGIN_SCREEN) {
             LoginScreen(
                 goToDasboard = {
-                    navController.navigate(DASHBOARD_SCREEN)
+                    navController.navigate(DASHBOARD_SCREEN){
+                        popUpTo(LOGIN_SCREEN) { inclusive = true }
+                    }
                 }
             )
         }
-        composable(DASHBOARD_SCREEN) { DashboardScreen() }
+        composable(DASHBOARD_SCREEN) { DashboardScreen(
+            goToLogin = {
+                navController.navigate(LOGIN_SCREEN) {
+                    popUpTo(DASHBOARD_SCREEN) { inclusive = true }
+                }
+            }
+        ) }
     }
 }
