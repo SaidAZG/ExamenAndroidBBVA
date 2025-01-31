@@ -11,6 +11,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.examenandroidbbva.ui.theme.DarkBlue
+import com.example.examenandroidbbva.ui.theme.NavyBlue
 import com.example.examenandroidbbva.ui.theme.Transparent
 import com.example.examenandroidbbva.ui.theme.White
 
@@ -35,7 +36,9 @@ fun BasicTextField(
             unfocusedTextColor = DarkBlue,
             focusedContainerColor = White,
             unfocusedContainerColor = White,
-            focusedIndicatorColor = Transparent,
+            focusedLabelColor = DarkBlue,
+            unfocusedLabelColor = DarkBlue,
+            cursorColor = NavyBlue
         ),
         keyboardOptions = KeyboardOptions(
             keyboardType = KeyboardType.Text
