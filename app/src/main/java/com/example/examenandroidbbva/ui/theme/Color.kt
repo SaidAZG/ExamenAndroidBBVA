@@ -16,3 +16,5 @@ val Blue = Color(0xFF0F3D74)
 val LightBlue = Color(0xFF13599B)
 
 val BrigthPink = Color(0xFFEE3A6A)
+
+val White = Color(0xFFFFFFFF)
