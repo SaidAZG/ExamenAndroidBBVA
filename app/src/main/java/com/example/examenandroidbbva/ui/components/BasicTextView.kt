@@ -16,7 +16,7 @@ fun BasicTextView(
     text: String = "Hola",
     fontSize: TextUnit = 18.sp,
     color: Color = DarkBlue,
-    fontWeight: FontWeight = FontWeight.Normal,
+    fontWeight: FontWeight = FontWeight.Bold,
     allCaps: Boolean = false,
     modifier: Modifier = Modifier
 ){
