@@ -25,7 +25,21 @@ fun MainActivityNavigation(navController : NavHostController) {
         navController = navController,
         startDestination = SPLASH_SCREEN
     ) {
-        composable(SPLASH_SCREEN) { SplashScreen() }
+        composable(SPLASH_SCREEN) {
+            SplashScreen(
+                isLoggedIn = true,
+                goToLogin = {
+                    navController.navigate(LOGIN_SCREEN) {
+                        popUpTo(SPLASH_SCREEN) { inclusive = true }
+                    }
+                },
+                goToDashboard = {
+                    navController.navigate(DASHBOARD_SCREEN) {
+                        popUpTo(SPLASH_SCREEN) { inclusive = true }
+                    }
+                }
+            )
+        }
         composable(LOGIN_SCREEN) { LoginScreen() }
         composable(DASHBOARD_SCREEN) { DashboardScreen() }
     }
