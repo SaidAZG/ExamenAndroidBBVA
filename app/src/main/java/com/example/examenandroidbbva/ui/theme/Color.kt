@@ -14,6 +14,7 @@ val DarkBlue = Color(0xFF19213A)
 val NavyBlue = Color(0xFF1A2E54)
 val Blue = Color(0xFF0F3D74)
 val LightBlue = Color(0xFF13599B)
+val GreyBlue = Color(0xFFC5C9D3)
 
 val BrigthPink = Color(0xFFEE3A6A)
 

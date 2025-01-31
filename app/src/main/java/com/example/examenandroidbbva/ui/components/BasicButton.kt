@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.examenandroidbbva.ui.theme.Blue
+import com.example.examenandroidbbva.ui.theme.GreyBlue
 import com.example.examenandroidbbva.ui.theme.White
 
 @Preview
@@ -21,6 +22,7 @@ fun BasicButton(
         modifier = modifier,
         colors = ButtonDefaults.buttonColors(
             containerColor = Blue,
+            disabledContainerColor = GreyBlue
         ),
         onClick = { /*TODO*/ },
         enabled = enabled
