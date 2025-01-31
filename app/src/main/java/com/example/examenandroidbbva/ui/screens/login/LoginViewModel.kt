@@ -51,7 +51,7 @@ class LoginViewModel @Inject constructor(
                 savedDataUseCase(response.body()!!)
                 _state.value = _state.value.copy(user = response.body(), isLoading = false)
             } else {
-                _state.value = _state.value.copy(errorMessage = "Error en el login", isLoading = false)
+                _state.value = _state.value.copy(errorMessage = "No se puede iniciar sesión", isLoading = false)
             }
         }
     }
